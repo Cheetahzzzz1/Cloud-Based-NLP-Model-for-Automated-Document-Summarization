@@ -61,6 +61,9 @@ curl -X POST -F "file=@sample.pdf" http://localhost:5000/summarize
 ```
 
 ### Sample Output:
+
+This is an sample output and not the real one.
+
 ```json
 {
   "summary": "This model summarizes documents with high accuracy...",
