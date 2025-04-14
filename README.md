@@ -62,7 +62,7 @@ curl -X POST -F "file=@sample.pdf" http://localhost:5000/summarize
 
 ### Sample Output:
 
-This is an sample output and not the real one.
+This is a sample output and not the real one.
 
 ```json
 {
