@@ -38,16 +38,16 @@ To run the application <br>
 ```python app.py```
 
 ## Web Page
-![Screenshot (5)](https://github.com/user-attachments/assets/4eb869f3-c26b-48b2-82fb-ece5bb8debff)
+![static/1.png](https://github.com/user-attachments/assets/4eb869f3-c26b-48b2-82fb-ece5bb8debff)
 
 ## Text Summarization 
-![Screenshot (1)](https://github.com/user-attachments/assets/9c6424b0-5eb6-4977-bf38-fca1691587f0)
+![static/2.png](https://github.com/user-attachments/assets/9c6424b0-5eb6-4977-bf38-fca1691587f0)
 
 ## Sentiment Analysis
-![Screenshot (14)](https://github.com/user-attachments/assets/ba7bfd15-a683-494f-9aa6-fa3207b280c1)
+![static/3.png](https://github.com/user-attachments/assets/ba7bfd15-a683-494f-9aa6-fa3207b280c1)
 
 ## Word Cloud
-![Screenshot (13)](https://github.com/user-attachments/assets/8ac1b2c7-c4dc-436f-b54e-da37aa19b3d5)
+![static/4.png](https://github.com/user-attachments/assets/8ac1b2c7-c4dc-436f-b54e-da37aa19b3d5)
 
 
 
