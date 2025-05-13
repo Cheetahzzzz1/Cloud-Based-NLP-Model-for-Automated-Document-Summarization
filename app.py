@@ -25,11 +25,10 @@ def analyze():
 
     # Summarization
     if action == 'summarize':
-        summary = summarize_text(text, use_pegasus=True)  # 🔥 Now uses Pegasus
+        summary = summarize_text(text, use_pegasus=True)  # 🔥 Pegasus API call
         return render_template('result.html', display="Summarized Text", result=summary)
 
-
-    # Sentiment Analysis + Chart
+    # Sentiment Analysis
     elif action == 'sentiment':
         result_dict = analyze_sentiment(text)
         result = get_sentiment_label(result_dict)
@@ -41,7 +40,7 @@ def analyze():
         path = generate_wordcloud(text, filename)
         return render_template('result1.html', display="Word Cloud", image_path=path)
 
-    # Word Frequency Chart (optional, if used)
+    # Word Frequency Chart (optional)
     elif action == 'frequency':
         filename = "frequency.png"
         path = plot_word_frequency(text, filename)
@@ -50,7 +49,7 @@ def analyze():
     # Fallback
     return render_template('result.html', display="No Result", result="Action not recognized.")
 
-# Helper function for sentiment label
+# Helper for sentiment label
 def get_sentiment_label(scores):
     compound = scores['compound']
     if compound >= 0.05:
@@ -60,5 +59,6 @@ def get_sentiment_label(scores):
     else:
         return f"Neutral : {scores}"
 
+# ✅ Entry point for gunicorn or python run
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)  # Use host/port for Docker or gunicorn
