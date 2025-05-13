@@ -9,7 +9,7 @@ An AI-powered tool to simplify **text analysis** and **document summarization** 
 - 📝 **Text Summarization**  
   Generate concise, relevant summaries using either:
   - Frequency-based NLP methods
-  - Pegasus (transformer-based) model via API toggle
+  - Pegasus (transformer-based) model via Modal API
 
 - 📊 **Sentiment Analysis**  
   Analyze emotional tone — positive, negative, or neutral — using VADER.
@@ -20,21 +20,21 @@ An AI-powered tool to simplify **text analysis** and **document summarization** 
 - 📄 **PDF Upload Support**  
   Upload and extract text directly from PDF files for all actions.
 
-- ⚙️ **Light/Dark Mode UI**  
-  Beautiful theme toggle with responsive, modern design.
+- 🌗 **Light/Dark Mode UI**  
+  Modern responsive interface with a glowing aesthetic and theme toggle.
 
 ---
 
 ## 🧪 Usage Guide
 
 1. **Summarization**  
-   Paste text or upload a PDF → choose summarization → select Pegasus or traditional method → get instant output.
+   Paste text or upload a PDF → choose summarization → select Pegasus or frequency-based → view results.
 
 2. **Sentiment Analysis**  
-   The app uses VADER to compute compound polarity scores and charts the emotional tone.
+   Uses VADER to compute compound polarity scores and visualize via Chart.js.
 
 3. **Word Cloud**  
-   Generates a word cloud highlighting the most frequent non-stop words.
+   Instantly generates a word cloud for the most frequent non-stop words.
 
 ---
 
@@ -59,26 +59,26 @@ python app.py
 
 ### 🔹 Home Page
 
-![Home](https://github.com/user-attachments/assets/4eb869f3-c26b-48b2-82fb-ece5bb8debff/static/1.png)
+![Home](https://raw.githubusercontent.com/Akash-Kadali/Cloud-Based-NLP-Model-for-Automated-Document-Summarization/main/static/1.png)
 
 ### 🔹 Text Summarization
 
-![Summarization](https://github.com/user-attachments/assets/9c6424b0-5eb6-4977-bf38-fca1691587f0/static/2.png)
+![Summarization](https://raw.githubusercontent.com/Akash-Kadali/Cloud-Based-NLP-Model-for-Automated-Document-Summarization/main/static/2.png)
 
 ### 🔹 Sentiment Analysis
 
-![Sentiment](https://github.com/user-attachments/assets/ba7bfd15-a683-494f-9aa6-fa3207b280c1/static/3.png)
+![Sentiment](https://raw.githubusercontent.com/Akash-Kadali/Cloud-Based-NLP-Model-for-Automated-Document-Summarization/main/static/3.png)
 
 ### 🔹 Word Cloud
 
-![Word Cloud](https://github.com/user-attachments/assets/8ac1b2c7-c4dc-436f-b54e-da37aa19b3d5/static/4.png)
+![Word Cloud](https://raw.githubusercontent.com/Akash-Kadali/Cloud-Based-NLP-Model-for-Automated-Document-Summarization/main/static/4.png)
 
 ---
 
 ## 🔧 Tech Stack
 
 * **Backend:** Flask
-* **NLP:** NLTK, VADER, SentencePiece, Transformers
+* **NLP:** NLTK, VADER, Transformers, SentencePiece
 * **Visualization:** Matplotlib, WordCloud, Chart.js
 * **Cloud Inference:** Pegasus model via Modal API
 
