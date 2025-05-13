@@ -1,58 +1,94 @@
-# Text-Summarization-NLP
-A tool designed to simplify text analysis and document summarization using Natural Language Processing (NLP) techniques.you can quickly generate summaries and gain insights from your documents, making it easier to digest and understand large volumes of text.
+# 🧠 Text Summarization NLP App
 
-## Features
+An AI-powered tool to simplify **text analysis** and **document summarization** using cutting-edge Natural Language Processing (NLP) techniques. With just a few clicks, you can generate summaries, detect sentiment, and visualize text insights, making it easy to process and understand large volumes of content.
 
-- **Text Summarization**: Generate concise summaries of your documents, extracting the most important information.
-- **Sentiment Analysis**: Determine the sentiment expressed in your text, whether it's positive, negative, or neutral.
-- **Document Management**: Upload and manage your documents for easy analysis and summarization.
-- **Word Cloud Generation**: Visualize the most frequently occurring words in your text for a quick overview.
-  
-## Usage
+---
 
-1. **Text Summarization**: Simply upload your document or paste the text content into the tool. Reportionary will then generate a summary for you.
+## 🚀 Features
 
-2. **Sentiment Analysis**: After uploading your document, Reportionary will analyze the sentiment expressed in the text and provide insights.
+- 📝 **Text Summarization**  
+  Generate concise, relevant summaries using either:
+  - Frequency-based NLP methods
+  - Pegasus (transformer-based) model via API toggle
 
-3. **Document Management**: Use the document management feature to upload, organize, and manage your documents for analysis.
+- 📊 **Sentiment Analysis**  
+  Analyze emotional tone — positive, negative, or neutral — using VADER.
 
-4. **Word Cloud Generation**: Explore the word cloud feature to visually identify the most common words in your text.
+- ☁️ **Word Cloud Generation**  
+  Visualize high-frequency terms in your text using intuitive word clouds.
 
+- 📄 **PDF Upload Support**  
+  Upload and extract text directly from PDF files for all actions.
 
-**This requires the following modules :**
+- ⚙️ **Light/Dark Mode UI**  
+  Beautiful theme toggle with responsive, modern design.
 
-Spacy
-NLTK
-Flask
-TextBlob
-NumPy
-Scikit-Learn
-pypdf2
+---
 
-## Python version 3.10 - 3.11
-Install modules by<br>
-```pip install -r requirements.txt```
-<br>
+## 🧪 Usage Guide
 
-To run the application <br>
-```python app.py```
+1. **Summarization**  
+   Paste text or upload a PDF → choose summarization → select Pegasus or traditional method → get instant output.
 
-## Web Page
-![static/1.png](https://github.com/user-attachments/assets/4eb869f3-c26b-48b2-82fb-ece5bb8debff)
+2. **Sentiment Analysis**  
+   The app uses VADER to compute compound polarity scores and charts the emotional tone.
 
-## Text Summarization 
-![static/2.png](https://github.com/user-attachments/assets/9c6424b0-5eb6-4977-bf38-fca1691587f0)
+3. **Word Cloud**  
+   Generates a word cloud highlighting the most frequent non-stop words.
 
-## Sentiment Analysis
-![static/3.png](https://github.com/user-attachments/assets/ba7bfd15-a683-494f-9aa6-fa3207b280c1)
+---
 
-## Word Cloud
-![static/4.png](https://github.com/user-attachments/assets/8ac1b2c7-c4dc-436f-b54e-da37aa19b3d5)
+## 📦 Requirements
 
+**Python Version:** `3.10` to `3.11`
 
+### Install dependencies:
+```bash
+pip install -r requirements.txt
+````
 
+### Run the application:
 
+```bash
+python app.py
+```
 
+---
 
+## 🌐 UI Snapshots
 
+### 🔹 Home Page
 
+![Home](https://github.com/user-attachments/assets/4eb869f3-c26b-48b2-82fb-ece5bb8debff/static/1.png)
+
+### 🔹 Text Summarization
+
+![Summarization](https://github.com/user-attachments/assets/9c6424b0-5eb6-4977-bf38-fca1691587f0/static/2.png)
+
+### 🔹 Sentiment Analysis
+
+![Sentiment](https://github.com/user-attachments/assets/ba7bfd15-a683-494f-9aa6-fa3207b280c1/static/3.png)
+
+### 🔹 Word Cloud
+
+![Word Cloud](https://github.com/user-attachments/assets/8ac1b2c7-c4dc-436f-b54e-da37aa19b3d5/static/4.png)
+
+---
+
+## 🔧 Tech Stack
+
+* **Backend:** Flask
+* **NLP:** NLTK, VADER, SentencePiece, Transformers
+* **Visualization:** Matplotlib, WordCloud, Chart.js
+* **Cloud Inference:** Pegasus model via Modal API
+
+---
+
+## 📄 License
+
+MIT License — free for personal and commercial use. Attribution appreciated.
+
+---
+
+> Designed & Developed by **Sri Akash Kadali** ✨
+> Empowering faster reading, smarter decisions.
