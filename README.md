@@ -63,11 +63,11 @@ python app.py
 
 ### 🔹 Text Summarization
 
-![Summarization](https://raw.githubusercontent.com/Akash-Kadali/Cloud-Based-NLP-Model-for-Automated-Document-Summarization/main/static/1.png)
+![Summarization](https://raw.githubusercontent.com/Akash-Kadali/Cloud-Based-NLP-Model-for-Automated-Document-Summarization/main/static/4.png)
 
 ### 🔹 Sentiment Analysis
 
-![Sentiment](https://raw.githubusercontent.com/Akash-Kadali/Cloud-Based-NLP-Model-for-Automated-Document-Summarization/main/static/4.png)
+![Sentiment](https://raw.githubusercontent.com/Akash-Kadali/Cloud-Based-NLP-Model-for-Automated-Document-Summarization/main/static/1.png)
 
 ### 🔹 Word Cloud
 
