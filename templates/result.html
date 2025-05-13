@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Summarizer – Result</title>
+
+  <!-- Google Font and Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icons.png') }}">
+</head>
+
+<body id="page" data-theme="light">
+  <!-- Glowing blob + particle canvas -->
+  <div class="blob"></div>
+  <canvas id="particles-js" style="position: fixed; inset: 0; z-index: -4;"></canvas>
+
+  <!-- Theme toggle button -->
+  <button onclick="toggleTheme()" title="Toggle Theme" style="
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;">🌗</button>
+
+  <header>
+    <h1>🧠 Text Summarizer Result</h1>
+    <p style="font-size: 1rem; color: var(--text-muted); margin-top: 0.5rem;">
+      Here's your summary, sentiment, or word cloud outcome 🎯
+    </p>
+  </header>
+
+  <main>
+    <section class="container result">
+      <h2>{{ display }}</h2>
+      <p><strong>{{ result }}</strong></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Text Summarizer by Sri Akash Kadali</p>
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('page').setAttribute('data-theme', isDark ? 'light' : 'dark');
+    }
+  </script>
+
+  <!-- Particle Background Script -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script>
+    tsParticles.load("particles-js", {
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      particles: {
+        number: { value: 60 },
+        color: { value: "#60a5fa" },
+        shape: { type: "circle" },
+        opacity: { value: 0.1 },
+        size: { value: 2 },
+        move: { enable: true, speed: 1 },
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+        },
+      }
+    });
+  </script>
+</body>
+</html>

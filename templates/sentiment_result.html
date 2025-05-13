@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentiment Result</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icons.png') }}">
+  <style>
+    body {
+      font-family: 'Google Sans', sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: var(--bg, #f9fafb);
+      color: var(--text, #111827);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+    }
+    header p {
+      font-size: 0.95rem;
+      color: var(--text-muted, #6b7280);
+      margin-bottom: 1rem;
+    }
+    .result {
+      max-width: 400px;
+      margin: 1.5rem auto;
+      background: var(--card, #ffffff);
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    .result h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .result p {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    canvas {
+      width: 260px !important;
+      height: 260px !important;
+      margin: 0 auto;
+    }
+    footer {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-top: 2rem;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body id="page" data-theme="light">
+  <button class="theme-toggle" onclick="toggleTheme()">🌗</button>
+
+  <header>
+    <h1>🧠 Sentiment Overview</h1>
+    <p>AI-based tone summary</p>
+  </header>
+
+  <section class="result">
+    <h2>{{ display }}</h2>
+    <p>{{ result }}</p>
+    <canvas id="sentimentChart"></canvas>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 · Sri Akash Kadali</p>
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      document.getElementById('page').setAttribute('data-theme', next);
+    }
+  </script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const sentimentScores = {{ result_dict | tojson }};
+    const ctx = document.getElementById('sentimentChart').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Negative', 'Neutral', 'Positive'],
+        datasets: [{
+          label: 'Sentiment',
+          data: [sentimentScores.neg, sentimentScores.neu, sentimentScores.pos],
+          backgroundColor: ['#ef4444', '#facc15', '#10b981'],
+          borderColor: '#fff',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        cutout: '60%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: 'var(--text)',
+              font: { size: 12 },
+              boxWidth: 14
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: context => {
+                const value = context.parsed;
+                return `${context.label}: ${(value * 100).toFixed(1)}%`;
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
